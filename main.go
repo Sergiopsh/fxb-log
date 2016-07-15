@@ -12,7 +12,7 @@ import (
 
 var logNAME             string = "/var/log/fxbank/cluster-logs/fxbank-ws.log"
 var newStringPtrn       string = "^\\(serverId=([0-9]+)\\) ([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}[:0-9]*) "
-var elasticUrl          string = "http://185.19.218.2:9288"
+var elasticUrl          string = "http://185.19.218.2:9289"
 
 var elasticClient       *elasticapi.Client = nil;
 
@@ -55,6 +55,16 @@ func main() {
     ArrMap = make (map[string]map[string]string)
 
     elasticInit()
+    var c chan []string = make(chan []string)
+    go routine(c);
+    go routine(c);
+    go routine(c);
+    go routine(c);
+    go routine(c);
+    go routine(c);
+    go routine(c);
+    go routine(c);
+
 
     var messMap []string
     tc := tail.Config{Follow: true, ReOpen: true, MustExist: true, Poll: true}
@@ -63,7 +73,9 @@ func main() {
         //try to find start INBOUND or OUBOUND message
         if res,_ := regex.MatchString(newStringPtrn + ".+ Message$",line.Text); res == true{
             if messMap != nil{
-                sendES(messMap)
+                //sendES(messMap)
+                c <- messMap
+
             }
             //Drop okd message from map
             messMap = nil
@@ -71,7 +83,8 @@ func main() {
             continue
         }else if res,_ := regex.MatchString(newStringPtrn + ".+$",line.Text); res == true && messMap != nil {
             //if new string have something like this (serverId=11) 2015-12-29 00:00:49 THEN this NEW message from APP
-            sendES(messMap)
+            //sendES(messMap)
+            c <- messMap
             messMap = nil
             continue
         }
@@ -84,6 +97,13 @@ func main() {
             continue
         }
     }
+}
+
+func routine(c chan []string){
+    for {
+        sendES(<- c)
+    }
+
 }
 
 
