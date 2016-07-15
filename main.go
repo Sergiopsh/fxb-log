@@ -205,7 +205,7 @@ func sendES(messMap []string){
             for ok == false {
                 elasticPing()
                 _, err := elasticClient.Index().
-                Index(strfirst[0][2]).
+                Index("fxbank-ws-"+strfirst[0][2]).
                 Type("ws-log").
                 BodyJson(sendArr).
                 Do()

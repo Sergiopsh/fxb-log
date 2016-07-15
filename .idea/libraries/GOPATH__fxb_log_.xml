@@ -1,0 +1,36 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;fxb-log&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/go/src/gopkg.in" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/golang-book" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/opencontainers/runc/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/hack/make/.build-deb" />
+      <root url="file://$USER_HOME$/go/src/github.com/hashicorp/logutils/.git" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in/vmihailenco/msgpack.v2/.git" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in/olivere/elastic.v3/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/hpcloud/tail/.git" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in/fsnotify.v1/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/pkg/tarsum/testdata" />
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/docs/reference/api/_static" />
+      <root url="file://$USER_HOME$/go/src/github.com/opencontainers/runc/Godeps/_workspace" />
+      <root url="file://$USER_HOME$/go/src/golang-book/chapter2/.idea" />
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/hack/make/.build-rpm" />
+      <root url="file://$USER_HOME$/go/src/github.com/BurntSushi/toml/_examples" />
+      <root url="file://$USER_HOME$/go/src/github.com/olivere/elastic/.git" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in/olivere/elastic.v2/.git" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in/tomb.v1/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/DLag/logear/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/BurntSushi/toml/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/DLag/logear/.idea" />
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/hack/make/.resources-windows" />
+      <root url="file://$USER_HOME$/go/src/github.com/docker/docker/pkg/archive/testdata" />
+    </excluded>
+  </library>
+</component>
